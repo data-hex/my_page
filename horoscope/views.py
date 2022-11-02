@@ -22,7 +22,7 @@ def get_horoscope_by_sign(request, sign_of_zodiac):
 
     if sign_of_zodiac.lower() in signs:
         return HttpResponse(signs[sign_of_zodiac.lower()])
-    return HttpResponse(f"Неизвестный знак зодиака {sign_of_zodiac}")
+    return HttpResponseNotFound(f"Неизвестный знак зодиака {sign_of_zodiac}")
 
 # def aries(request):
 #     return HttpResponse("[ɛəri:z] Овен - первый знак зодиака, планета Марс (с 21 марта по 20 апреля).")
