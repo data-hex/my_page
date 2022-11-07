@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 
 
 # Create your views here.
-def get_week_days(request, days):
+def get_week_days(request, days: str):
     day_list = {
         'monday': 'Пн - работать',
         'tuesday': 'Вт - учиться',
@@ -15,8 +15,9 @@ def get_week_days(request, days):
     }
     return HttpResponse(day_list.get(days, f'Не найден день недели {days}'))
 
-# def monday(request):
-#     return HttpResponse("Понедельник день тяжелый")
-#
-# def tuesday(request):
-#     return HttpResponse("Вторник: надо пить валерьянку")
+
+def get_week_days_by_number(request, days: int):
+    if days in range(1, 8):
+        return HttpResponse(f"Сегодня {days} день недели")
+    else:
+        return HttpResponseNotFound(f"Неверный номер дня - {days}")
