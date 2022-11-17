@@ -11,7 +11,7 @@ def get_rectangle_area(request, width: int, height: int):
 
 
 def rectangle_area(request, width: int, height: int):
-    return HttpResponseRedirect(f"/rectangle/{width}/{height}")
+    return HttpResponseRedirect(f"/calculate_geometry/rectangle/{width}/{height}")
 
 
 def get_square_area(request, side: int):
@@ -21,7 +21,7 @@ def get_square_area(request, side: int):
 
 
 def square_area(request, side: int):
-    return HttpResponseRedirect(f"/square/{side}")
+    return HttpResponseRedirect(f"/calculate_geometry/square/{side}")
 
 
 def get_circle_area(request, radius: int):
@@ -31,4 +31,4 @@ def get_circle_area(request, radius: int):
 
 
 def circle_area(request, radius: int):
-    return HttpResponseRedirect(f"/circle/{radius}")
+    return HttpResponseRedirect(f"/calculate_geometry/circle/{radius}")
