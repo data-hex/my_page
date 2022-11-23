@@ -5,13 +5,16 @@ from django.urls import reverse
 
 
 # Create your views here.
+
+
 def get_rectangle_area(request, width: int, height: int):
     if 'get_' in request.path:
         redirect_url = reverse('name-rectangle', args=(width, height))
         return HttpResponseRedirect(redirect_url)
     area = width * height
     answer = f"Площадь прямоугольника размером {width}x{height} равна {area}"
-    return HttpResponse(answer)
+    #return HttpResponse(answer)
+    return render(request, 'geometry/rectangle.html')
 
 
 def get_square_area(request, side: int):
@@ -20,7 +23,8 @@ def get_square_area(request, side: int):
         return HttpResponseRedirect(redirect_url)
     area = side ** 2
     answer = f"Площадь квадрата размером {side}x{side} равна {area}"
-    return HttpResponse(answer)
+    #return HttpResponse(answer)
+    return render(request, 'geometry/square.html')
 
 
 def get_circle_area(request, radius: int):
@@ -29,4 +33,5 @@ def get_circle_area(request, radius: int):
         return HttpResponseRedirect(redirect_url)
     area = pi * radius ** 2
     answer = f"Площадь круга радиуса {radius} равна {area}"
-    return HttpResponse(answer)
+    #return HttpResponse(answer)
+    return render(request, 'geometry/circle.html')
