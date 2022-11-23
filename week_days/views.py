@@ -2,17 +2,20 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 
-
 # Create your views here.
 day_list = {
-        'monday': 'Пн - работать',
-        'tuesday': 'Вт - учиться',
-        'wednesday': 'Ср - гладить котов',
-        'thursday': 'Чт - питон учить',
-        'friday': 'Пт - пиво пить',
-        'saturday': 'Сб - болеть',
-        'sunday': 'Вс - в лес ходить',
-    }
+    'monday': 'Пн - работать',
+    'tuesday': 'Вт - учиться',
+    'wednesday': 'Ср - гладить котов',
+    'thursday': 'Чт - питон учить',
+    'friday': 'Пт - пиво пить',
+    'saturday': 'Сб - болеть',
+    'sunday': 'Вс - в лес ходить',
+}
+
+
+def main(request):
+    return render(request, 'week_days/greeting.html')
 
 
 def get_week_days(request, days: str):
