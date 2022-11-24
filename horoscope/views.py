@@ -77,8 +77,14 @@ def get_elements(request, type: str):
 
 
 def get_horoscope_by_sign(request, sign_of_zodiac: str):
-    return render(request, 'horoscope/info_zodiac.html')
-    #description = zodiac_dict.get(sign_of_zodiac, None)
+    description = zodiac_dict.get(sign_of_zodiac)
+    data = {
+        "description_zodiac": description,
+        "sign": sign_of_zodiac.title()
+    }
+
+    return render(request, 'horoscope/info_zodiac.html', context=data)
+
     #response = render_to_string('horoscope/info_zodiac.html')
     #if description:
         #return HttpResponse(response)
