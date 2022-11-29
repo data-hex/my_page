@@ -31,16 +31,12 @@ zodiac_elements_dict = {
 
 def index(request):
     zodiacs = list(zodiac_dict)
-    li_elem = ''
-    for sign in zodiacs:
-        redirect_path = reverse(viewname='horoscope-name', args=[sign])
-        li_elem += f"<li> <a target='_blank' href='{redirect_path}'>{sign.title()} </a> </li>"
-    response = f"""
-    <ol>
-        {li_elem}
-    </ol>
-    """
-    return HttpResponse(response)
+    #f"<li> <a target='_blank' href='{redirect_path}'>{sign.title()} </a> </li>"
+    context = {
+        'zodiacs': zodiacs,
+        'zodiac_dict': zodiac_dict
+    }
+    return render(request, 'horoscope/index.html', context=context)
 
 
 def get_sign_of_elements(request, types_zodiac: str):
