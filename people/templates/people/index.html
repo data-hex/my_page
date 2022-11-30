@@ -7,7 +7,12 @@
 <body>
     <h2>Информации о людях</h2>
     {% for man in people %}
-        <h5>{{ man }}</h5>
+        <div>
+            <h5>ФИО - {{ man.name }}</h5>
+            <p>Возраст - {{ man.age }}</p>
+            <p>Телефон - {{ man.phone }}</p>
+        </div>
+
     {% endfor %}
 </body>
 </html>
