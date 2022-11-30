@@ -38,7 +38,7 @@ def index(request):
     }
     return render(request, 'horoscope/index.html', context=context)
 
-
+#принадлежность к стихии(elements)
 def get_sign_of_elements(request, types_zodiac: str):
     if zodiac_elements_dict.get(types_zodiac):
         li_elem = ''
