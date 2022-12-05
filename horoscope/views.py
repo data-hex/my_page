@@ -81,13 +81,6 @@ def get_horoscope_by_sign(request, sign_of_zodiac: str):
 
     return render(request, 'horoscope/info_zodiac.html', context=data)
 
-    #response = render_to_string('horoscope/info_zodiac.html')
-    #if description:
-        #return HttpResponse(response)
-"""    elif sign_of_zodiac == "type":
-        return HttpResponseRedirect('type/')
-    else:
-        return HttpResponseNotFound(f"Неизвестный знак зодиака {sign_of_zodiac}")"""
 
 
 def get_horoscope_by_sign_by_number(request, sign_of_zodiac: int):
