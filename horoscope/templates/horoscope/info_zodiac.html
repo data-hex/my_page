@@ -6,6 +6,7 @@
 
 {% block content %}
     <h1>Приложение гороскоп</h1>
+    {% include 'includes/navbar.html' %}
     {% if description_zodiac is None %}
         <h2>"Неправильный знак Зодиака {{ sign|upper }}"</h2>
     {% else %}
