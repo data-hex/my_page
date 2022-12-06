@@ -22,3 +22,6 @@ def get_people(request):
         'people': people,
     }
     return render(request, 'people/index.html', context=context)
+
+def get_beautiful(request):
+    return render(request, 'people/beautiful.html')
