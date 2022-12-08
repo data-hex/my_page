@@ -16,6 +16,7 @@
     {% if description_zodiac is None %}
         <h2>"Неправильный знак Зодиака {{ sign|upper }}"</h2>
     {% else %}
-        <h2>{{ description_zodiac|capfirst }}</h2>
+        <h2>{{sign}}</h2>
+        <h3>{{ description_zodiac|capfirst }}</h3>
     {% endif %}
 {% endblock %}
