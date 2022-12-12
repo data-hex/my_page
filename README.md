@@ -1,1 +1,1 @@
-learn Django!
+learn Django! templates, html, css, urlpatterns
