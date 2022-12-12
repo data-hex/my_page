@@ -19,5 +19,11 @@
     {% else %}
         <h2>{{ description_zodiac|split|first}}</h2>
         <h3>{{ description_zodiac|capfirst }}</h3>
+        {% for i in 10|times %}
+            <p>Hello</p>
+        {% endfor %}
+        {% for c in 1|filter_range:10 %}
+            <p>{{ c }}</p>
+        {% endfor %}
     {% endif %}
 {% endblock %}
